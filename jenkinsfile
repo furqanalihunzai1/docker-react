@@ -1,29 +1,16 @@
-CODE_CHANGES =getGitChanges()  //here we are defining what code chages do
+
 pipeline {
     agent any
     stages {
         stage("build") {
-           when {
-                  expression {
-                    BRANCH_NAME == 'main' && CODE_CHANGES == true 
-                    }
-              
-                
-                
-                }
+          
             steps {
                
                 echo 'This is buildd'
             }
         }
         stage("test") {
-          when {
-            expression {
-              BRANCH_NAME == 'main'
-              
-             }
-          
-          }
+         
             steps {
                 echo 'This is test'
                
@@ -35,21 +22,7 @@ pipeline {
             }
         }
     }
-    post{
-      always{
-        echo 'always'
-      }
-      
-      failure{
-        echo 'on fail'
-      }
-      success{
-        echo 'on success'
-      }
-      
-      
-    
-    }
+
     
     
     
