@@ -10,7 +10,7 @@ pipeline {
         stage("test") {
             steps {
                 echo 'This is test'
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-credentials', url: 'https://github.com/furqanalihunzai1/docker-react.git']])
+               
             }
         }
         stage("deploy") {
